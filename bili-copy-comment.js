@@ -45,7 +45,7 @@ window.addEventListener('load', () => {
                 if(url.match(reg1)) {
                     //console.log(root)
                     let reg = /\d+/
-                    o = reg.exec(url)
+                    var o = reg.exec(url)
                     console.log(o[0])
                     oid = o[0]
                     
@@ -53,20 +53,6 @@ window.addEventListener('load', () => {
 
                 var commentUrl = "https://www.bilibili.com/h5/comment/sub?oid=" + oid + "&pageType=17" + "&root="+root
                 navigator.clipboard.writeText(commentUrl)
-                // Copy meme icons alt text
-                // for (let node of content.childNodes.values()) {
-                //   if (node.nodeType === 3) {
-                //     contentPrepared += node.textContent;
-                //   } else if (node.nodeName === 'IMG' && node.nodeType === 1) {
-                //     contentPrepared += node.alt;
-                //   } else if (node.nodeName === 'BR' && node.nodeType === 1) {
-                //     contentPrepared += '\n';
-                //   } else if (node.nodeName === 'A' && node.nodeType === 1 && node.classList.contains('comment-jump-url')) {
-                //     contentPrepared += node.href.replace(/https?:\/\/www\.bilibili\.com\/video\//, '');
-                //   } else {
-                //     contentPrepared += node.innerText;
-                //   }
-                // }
             })
             injectWrap.querySelector('.operation').before(copyButton);
 
